@@ -1,0 +1,2 @@
+bajarse el docker-pipeline plugin
+y el docker-plugin
