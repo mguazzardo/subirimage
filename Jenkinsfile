@@ -13,7 +13,9 @@ pipeline {
     }
     stage('Building image') {
       steps{
-      	sh 'docker build -t centos7ssh .'
+	script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
 	}
     }
     stage('Deploy Image') {
