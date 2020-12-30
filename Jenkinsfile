@@ -13,10 +13,8 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
-        }
-      }
+      	sh 'docker build -t centos7ssh .'
+	}
     }
     stage('Deploy Image') {
       steps{
